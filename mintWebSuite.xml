@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "QA Suite" verbose = "1">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+    </listeners>
+    
+    <parameter name="baseUrl" value="https://wwws.mint.com/login.event" />
+    <parameter name="environment" value="prod" />	
+    <parameter name="buildNumber" value="ph6837.13 - spa53.6" />
+    <parameter name="mfaEnabled" value="true" />
+    <parameter name='shards' value="30,35" />
+    <parameter name="videoRecordingEnabled" value="true" />    
+    
+    <parameter name="client_browser" value="firefox" />    
+	<parameter name="remoteMachineUrl" value="http://172.16.116.67:4444/wd/hub" />
+	<parameter name="videoRecordingUrl" value="http://172.16.116.67:9998" />
+	
+	
+	<test name="Mint Web Tests" preserve-order="true">         
+	    <classes>
+	          <class name="com.intuit.mint.splunk.AutoMonitor.Feature1Test"/>
+        </classes>
+    </test>
+ </suite>
